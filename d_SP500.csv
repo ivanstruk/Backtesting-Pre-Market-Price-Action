@@ -45,7 +45,6 @@ ANTM,Anthem,reports,Health Care,Managed Health Care,"Indianapolis, Indiana",25/0
 AON,Aon plc,reports,Financials,Insurance Brokers,"London, United Kingdom",23/04/1996,315293,1982 (1919)
 AOS,A.O. Smith Corp,reports,Industrials,Building Products,"Milwaukee, Wisconsin",26/07/2017,91142,1916
 APA,Apache Corporation,reports,Energy,Oil & Gas Exploration & Production,"Houston, Texas",28/07/1997,6769,1954
-APC,Anadarko Petroleum Corp,reports,Energy,Oil & Gas Exploration & Production,"The Woodlands, Texas",28/07/1997,773910,1959
 APD,Air Products & Chemicals Inc,reports,Materials,Industrial Gases,"Allentown, Pennsylvania",30/04/1985,2969,1940
 APH,Amphenol Corp,reports,Information Technology,Electronic Components,"Wallingford, Connecticut",30/09/2008,820313,1932
 APTV,Aptiv Plc,reports,Consumer Discretionary,Auto Parts & Equipment,"Gillingham, Kent, United Kingdom",24/12/2012,1521332,1994
@@ -437,7 +436,7 @@ TFX,Teleflex,reports,Health Care,Health Care Equipment,"Wayne, Pennsylvania",18/
 TGT,Target Corp.,reports,Consumer Discretionary,General Merchandise Stores,"Minneapolis, Minnesota",31/12/1976,27419,
 TIF,Tiffany & Co.,reports,Consumer Discretionary,"Apparel, Accessories & Luxury Goods","New York, New York",21/06/2000,98246,
 TJX,TJX Companies Inc.,reports,Consumer Discretionary,Apparel Retail,"Framingham, Massachusetts",30/09/1985,109198,
-TMK,Torchmark Corp.,reports,Financials,Life & Health Insurance,"McKinney, Texas",30/04/1989,320335,
+GL,Torchmark Corp.,reports,Financials,Life & Health Insurance,"McKinney, Texas",30/04/1989,320335,
 TMO,Thermo Fisher Scientific,reports,Health Care,Health Care Equipment,"Waltham, Massachusetts",,97745,2006
 TMUS,T-Mobile US,reports,Communication Services,Wireless Telecommunication Services,"Bellevue, Washington",15/07/2019,1283699,
 TPR,"Tapestry, Inc.",reports,Consumer Discretionary,"Apparel, Accessories & Luxury Goods","New York, New York",,1116132,2017

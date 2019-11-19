@@ -1,0 +1,4 @@
+,Symbol,- increases in both premarket and intraday x% of the time.,- if increasing in premarket has a x% chance of increasing in intraday.,- if increasing in premarket has a x% change of falling in intraday.
+0,TSLA,0.3,0.8571,0.1429
+1,MSFT,0.5,0.6667,0.3333
+2,AAPL,0.35,0.5385,0.4615
