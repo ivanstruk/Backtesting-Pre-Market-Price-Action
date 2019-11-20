@@ -6,20 +6,15 @@ Created on Tue Nov 19
 
 """
 
-from definition import get_er_dates
-from master import spy
-from master import qqq
-from master import hunt_hist
-from master import get_hist
-from master import get_hist2
+from earnings_parser import get_er_dates
+from EOD_parser import hunt_hist
+from EOD_parser import get_hist
+from EOD_parser import get_hist2
 import pandas as pd
 
 
-stocks = spy() + qqq()
-stocks = ["TSLA", "MSFT", "AAPL"]
 
-
-def execute(symbol):
+def test_sample_earnings(symbol):
     stocks = symbol
     stockz = []
     re1 = []
@@ -52,16 +47,12 @@ def execute(symbol):
         "Symbol" : []    
     }
     
-    
-    print("Parsing results dataframe...")
     results_df = pd.DataFrame(stock_parser)
     results_df["Symbol"] = stockz
     results_df["- increases in both premarket and intraday x% of the time."] = re1
     results_df["- if increasing in premarket has a x% chance of increasing in intraday."] = re2
     results_df["- if increasing in premarket has a x% change of falling in intraday."] = re3
-    print("Saving...")
-    results_df.to_csv("Main Output.csv")
-    return print("Done")
+    return results_df
 
 
 def test_sample_contribution(symbol):
@@ -86,16 +77,13 @@ def test_sample_contribution(symbol):
     results_df = pd.DataFrame(stock_parser)
     results_df["Symbol"] = stock_names
     results_df["Result"] = premarket_att
-    label = "test_sample_contribution"
-    print("Saving to csv...")
-    results_df.to_csv("{}.csv".format(label))
-    print("Result:")
-    
     average_premarket_weight = sum(results_df["Result"])/len(results_df["Result"])
     print("On average premarket trading contributes to ",
           (round(average_premarket_weight,4)*100), 
           "% of daily price action within the selected sample.")
+    print(" ")
     
+    return results_df
 
 def test_sample_indication(symbol):
     stock_names = []
@@ -119,16 +107,13 @@ def test_sample_indication(symbol):
     results_df = pd.DataFrame(stock_parser)
     results_df["Symbol"] = stock_names
     results_df["Result"] = results
-    label = "test_sample_indication"
-    print("Saving to csv...")
-    results_df.to_csv("{}.csv".format(label))
-    print("Result:")
-    
     final_result = sum(results_df["Result"])/len(results_df["Result"])
     print("A stock increasing or decreasing in value during premarket has a ",
           (round(final_result,4)*100), 
           "% probability of maintaining price action in the same direction.")
-    
+    return results_df
+
+
 def test_sample_long(symbol):
     stocks = symbol
     stock_names = []
@@ -152,9 +137,6 @@ def test_sample_long(symbol):
     results_df = pd.DataFrame(stock_parser)
     results_df["Symbol"] = stock_names
     results_df["Result"] = results
-    label = "test_sample_long"
-    print("Saving to csv...")
-    results_df.to_csv("{}.csv".format(label))
     print("Result:")
     
     final_result = sum(results_df["Result"])/len(results_df["Result"])
@@ -162,9 +144,7 @@ def test_sample_long(symbol):
           "a stock increasing in value during premarket has a ",
           (round(final_result,4)*100), 
           "% probability of further increasing in intraday.")
-
+    
+    return results_df
    
-test_sample_contribution(stocks)
-test_sample_indication(stocks)
-test_sample_long(stocks)
-execute(stocks)
+
