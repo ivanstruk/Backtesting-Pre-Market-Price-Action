@@ -36,6 +36,7 @@ Finally, **master_premarket_tests** is a Jupyter Notebook containing all of the 
 From the notebook you can explore the data, output the dataframes in whatever format you need, and change the sampled stocks. 
 
 Tests: 
+
 Function | Application 
 ------------ | ------------- 
 test_sample_contribution(symbol) | Here we determine how much of total close-to-close price action is attributable to the pre-market.
