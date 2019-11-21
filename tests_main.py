@@ -22,27 +22,31 @@ def test_sample_earnings(symbol):
     re3 = []
     
     for i in stocks:
-        print("Getting historical results for {}".format(i))
-        dfw = pd.DataFrame(get_er_dates(i))
-        name = i
-        length_ = sum(dfw["Binary_E"])
-        if length_ == 0:
-            print("Skipping - No Data")
-            pass
-        else:
-            result1 = round(((sum(dfw["PreM and Intra +"])/length_)*1),4)
-            zero_denom_test = sum(dfw["Pre-Market D+"])
-            if zero_denom_test == 0:
-                result2 = 0
-                continue
+        try:
+            print("Getting historical results for {}".format(i))
+            dfw = pd.DataFrame(get_er_dates(i))
+            name = i
+            length_ = sum(dfw["Binary_E"])
+            if length_ == 0:
+                print("Skipping - No Data")
+                pass
             else:
-                result2 = round(((sum(dfw["PreM and Intra +"])/sum(dfw["Pre-Market D+"]))*1),4)
-                result3 = round(((sum(dfw["PreM+ and Intra -"])/sum(dfw["Pre-Market D+"]))*1),4)
-            stockz.append(name)
-            re1.append(result1)
-            re2.append(result2)
-            re3.append(result3)
-    
+                result1 = round(((sum(dfw["PreM and Intra +"])/length_)*1),4)
+                zero_denom_test = sum(dfw["Pre-Market D+"])
+                if zero_denom_test == 0:
+                    result2 = 0
+                    continue
+                else:
+                    result2 = round(((sum(dfw["PreM and Intra +"])/sum(dfw["Pre-Market D+"]))*1),4)
+                    result3 = round(((sum(dfw["PreM+ and Intra -"])/sum(dfw["Pre-Market D+"]))*1),4)
+                stockz.append(name)
+                re1.append(result1)
+                re2.append(result2)
+                re3.append(result3)
+        except KeyError:
+            print("{} is not registered in SEC EDGAR or does not exist".format(i))
+            pass
+        
     stock_parser = {
         "Symbol" : []    
     }
